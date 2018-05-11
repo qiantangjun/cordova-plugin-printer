@@ -124,13 +124,9 @@ cordova.plugins.printer.pick(function (uri) {
 /**
  * Sends the content to print service.
  *
- * @param {String} content
- *      HTML string or DOM node
- *      if latter, innerHTML is used to get the content
- * @param {Object} options
- *       Options for the print job
- * @param {Function} callback
- *      An optional callback function
+ * @param {String} 如果是HTML字符串或DOM节点，则使用innerHTML获取内容
+ * @param {Object} 打印作业的选项
+ * @param {Function} 回调一个可选的回调函数
  * @param {Object} scope
  *      An optional scope of the callback
  *      Defaults to: window
@@ -145,25 +141,25 @@ cordova.plugins.printer.print('<html>..</html>', { duplex: 'long' }, function (r
 | Name | Description | Type | Platform |
 |:---- |:----------- |:----:| --------:|
 | name | 打印作业和文档的名称 | String | all |
-| duplex | Specifies the duplex mode to use for the print job.<br>Either double-sided on short site (duplex:'short'), double-sided on long site (duplex:'long') or single-sided (duplex:'none').<br>Defaults to: 'none' | String | all |
-| landscape| The orientation of the printed content, portrait or landscape.<br>Defaults to: false | Boolean | all |
-| graystyle | If your application only prints black text, setting this property to _true_ can result in better performance in many cases.<br>Defaults to: false | Boolean | all |
-| printerId | The network URL to the printer. | String | iOS |
-| border | Set to _false_ to skip any border. Useful for fullscreen images.<br>Defaults to: true | Boolean | iOS |
-| hidePageRange | Set to _true_ to hide the control for the page range.<br>Defaults to: false | Boolean | iOS |
-| hideNumberOfCopies | Set to _true_ to hide the control for the number of copies.<br>Defaults to: false | Boolean | iOS |
-| hidePaperFormat | Set to _true_ to hide the control for the paper format.<br>Defaults to: false | Boolean | iOS |
-| bounds | The Size and position of the print view<br>Defaults to: [40, 30, 0, 0] | Array | iPad |
+| duplex | 指定打印作业使用的双工模式.<br>Either double-sided on short site (duplex:'short'), double-sided on long site (duplex:'long') or single-sided (duplex:'none').<br>Defaults to: 'none' | String | all |
+| landscape| T他对印刷内容、肖像或风景的定位.<br>Defaults to: false | Boolean | all |
+| graystyle | 如果您的应用程序只打印黑色文本，那么将该属性设置为_true_可以在许多情况下获得更好的性能.<br>Defaults to: false | Boolean | all |
+| printerId | 到打印机的网络URL. | String | iOS |
+| border | 设置为false，以跳过任何边框。用于全屏图像。.<br>Defaults to: true | Boolean | iOS |
+| hidePageRange | 设置为true以隐藏页面范围的控件.<br>Defaults to: false | Boolean | iOS |
+| hideNumberOfCopies | 设置为true，以隐藏对副本数量的控制.<br>Defaults to: false | Boolean | iOS |
+| hidePaperFormat | 设置为true，以隐藏对纸张格式的控制.<br>Defaults to: false | Boolean | iOS |
+| bounds | 打印视图的大小和位置.<br>默认为: [40, 30, 0, 0] | Array | iPad |
 
 #### Further informations
-- All CSS rules needs to be embedded or accessible via absolute URLs in order to print out HTML encoded content.
-- The string can contain HTML content or an URI pointing to another web page.
+-所有CSS规则都需要嵌入或通过绝对url访问，以打印HTML编码的内容。
+-字符串可以包含HTML内容或指向另一个web页面的URI。
 
 
 ## Examples
 __NOTE:__ All CSS rules needs to be embedded or accessible via absolute URLs in order to print out HTML encoded content.
 
-Print the whole HTML page:
+打印整个HTML页面:
 
 ```javascript
 var page = location.href;
@@ -171,7 +167,7 @@ var page = location.href;
 cordova.plugins.printer.print(page, 'Document.html');
 ```
 
-Print the content from one part of the page:
+打印打印一部分HTML页面:
 
 ```javascript
 var page = document.getElementById('legal-notice');
@@ -179,7 +175,7 @@ var page = document.getElementById('legal-notice');
 cordova.plugins.printer.print(page, 'Document.html');
 ```
 
-Print some custom content:
+打印一些自定义内容:
 
 ```javascript
 var page = '<h1>Hello Document</h1>';
@@ -187,13 +183,13 @@ var page = '<h1>Hello Document</h1>';
 cordova.plugins.printer.print(page, 'Document.html');
 ```
 
-Print a remote web page:
+打印一个远程web页面:
 
 ```javascript
 cordova.plugins.printer.print('http://blackberry.de', 'BB10');
 ```
 
-Send to printer directly:
+直接发送到打印机:
 
 ```javascript
 cordova.plugins.printer.pick(function (uri) {
