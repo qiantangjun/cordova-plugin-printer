@@ -6,7 +6,7 @@
 Cordova Print Plugin [![npm version](https://badge.fury.io/js/cordova-plugin-printer.svg)](http://badge.fury.io/js/cordova-plugin-printer) [![Build Status](https://travis-ci.org/katzer/cordova-plugin-printer.svg?branch=master)](https://travis-ci.org/katzer/cordova-plugin-printer)
 ====================
 
-Plugin for the [Cordova][cordova] framework to print HTML from iOS, Android and Windows Universal apps.
+[Cordova]框架的插件，从iOS、Android和Windows通用应用程序中打印HTML。
 
 <p align="center">
     <img width="23.8%" src="https://github.com/katzer/cordova-plugin-printer/blob/example/images/print-ios.png"></img>
@@ -17,13 +17,13 @@ Plugin for the [Cordova][cordova] framework to print HTML from iOS, Android and 
 </p>
 
 ### About Apple AirPrint
-AirPrint is an Apple™ technology that helps you create full-quality printed output without the need to download or install drivers. AirPrint is built in to many printer models from most popular printer manufacturers. Just select an AirPrint printer on your local network to print from your favorite iOS or OS X app.
+AirPrint苹果™技术可以帮助你创建高质量的打印输出,而不需要下载或安装驱动程序。AirPrint是建立在许多打印机型号从最流行的打印机制造商。在你的本地网络上选择一个AirPrint打印机来打印你最喜欢的iOS或OS X应用程序。
 
 See [Drawing and Printing Guide for iOS][ios_guide] for detailed informations. 
 
 ### About Android Printing Framework
-Starting with _KitKat_, most Android devices have print service plugins installed to enable printing using the Google Cloud Print and Google Drive services. Print service plugins from other printer manufactures are available through the App Store though the Google Cloud Print service plugin can also be used to print from an Android device to just about any printer type and model.<br>
-In addition to supporting physical printers, it is also possible to save printed output to your Google Drive account or locally as a PDF file on the Android device.
+从_KitKat_开始，大多数Android设备都安装了打印服务插件，可以使用谷歌云打印和谷歌驱动服务进行打印。虽然谷歌云打印服务插件也可以用来打印任何打印机类型和型号，但从其他打印机制造商的打印服务插件可以通过应用程序商店获得。
+除了支持物理打印机外，还可以将打印输出保存到您的谷歌驱动器帐户或本地作为Android设备上的PDF文件。
 
 See [Building Apps with Multimedia for Android][android_guide] for detailed informations. 
 
@@ -71,7 +71,7 @@ See [CHANGELOG.md][changelog] to get the full changelog for the plugin.
 
 
 ## Usage
-The plugin and its methods are not available before the *deviceready* event has been fired.
+在*deviceready*事件被触发之前，插件及其方法是不可用的。
 
 ```javascript
 document.addEventListener('deviceready', function () {
@@ -80,7 +80,7 @@ document.addEventListener('deviceready', function () {
 ```
 
 ### Check printer
-The device his printing capabilities can be reviewed through the `printer.check` interface. Use this function to hide print functionality from users who will be unable to use it.
+他的打印能力可以通过“打印机”来检查。检查”界面。使用此功能可以将打印功能隐藏在无法使用的用户身上。
 
 ```javascript
 /**
@@ -99,10 +99,10 @@ cordova.plugins.printer.check(function (available, count) {
 ```
 
 ### Pick a printer
-Displays a system interface allowing the user to select an available printer. 
-To speak with a printer directly you need to know the network address by picking them before via `printer.pick`.
+显示系统界面，允许用户选择可用的打印机。
+要与打印机直接对话，您需要通过“printer.pick”来选择它们，以了解网络地址。
 
-Note that picking a printer is not supported for windows platform.
+注意，windows平台不支持选择打印机。
 
 ```javascript
 /**
@@ -117,7 +117,8 @@ cordova.plugins.printer.pick(function (uri) {
 ```
 
 ### Print content
-Content can be send to a printer through the `printer.print` interface. The method takes a string with HTML content, an URI pointing to another web page or any DOM node.
+
+内容可以通过“打印机”发送到打印机。打印”界面。该方法使用带有HTML内容的字符串，一个指向另一个web页面或任何DOM节点的URI。
 
 ```javascript
 /**
@@ -139,11 +140,11 @@ cordova.plugins.printer.print('<html>..</html>', { duplex: 'long' }, function (r
 });
 ```
 
-The method accepts a list of attributes. Not all are supported on each platform and by each printer!
+该方法接受一个属性列表。不是所有的平台和每个打印机都支持!
 
 | Name | Description | Type | Platform |
 |:---- |:----------- |:----:| --------:|
-| name | The name of the print job and of the document | String | all |
+| name | 打印作业和文档的名称 | String | all |
 | duplex | Specifies the duplex mode to use for the print job.<br>Either double-sided on short site (duplex:'short'), double-sided on long site (duplex:'long') or single-sided (duplex:'none').<br>Defaults to: 'none' | String | all |
 | landscape| The orientation of the printed content, portrait or landscape.<br>Defaults to: false | Boolean | all |
 | graystyle | If your application only prints black text, setting this property to _true_ can result in better performance in many cases.<br>Defaults to: false | Boolean | all |
